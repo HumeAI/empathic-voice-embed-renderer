@@ -1,0 +1,31 @@
+# adds linting to github action yml files
+name: Action Lint
+
+on:
+  pull_request:
+    types: ['opened', 'reopened', 'ready_for_review', 'synchronize']
+    paths:
+      - '.github/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  action-lint:
+    if: ${{ github.event.pull_request.draft == false }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository files
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Setup Go
+      - name: Setup Go
+        uses: actions/setup-go@v5
+
+      # Install and Run Action Lint
+      - name: Action Lint
+        run: go run github.com/rhysd/actionlint/cmd/actionlint@latest
