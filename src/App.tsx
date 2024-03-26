@@ -5,6 +5,7 @@ import { useConfigStore } from '@/store/config';
 import { useLayoutStore } from '@/store/layout';
 import { parentDispatch } from '@/utils/parentDispatch';
 import { Views } from '@/views/Views';
+import { isSocketUnknownMessageError } from '@humeai/voice';
 import { TRANSCRIPT_MESSAGE_ACTION } from '@humeai/voice-embed-react';
 import { VoiceProvider } from '@humeai/voice-react';
 import { AnimatePresence } from 'framer-motion';
@@ -66,7 +67,28 @@ function App() {
           {config ? (
             <Frame>
               <AnimatePresence mode={'wait'}>
-                <VoiceProvider {...config} onMessage={dispatchMessage}>
+                <VoiceProvider
+                  {...config}
+                  onMessage={dispatchMessage}
+                  // onError={(err) => {
+                  //   console.log(err);
+                  //   posthog.capture('api_error', { error: err });
+                  //   switch (err.type) {
+                  //     case 'socket_error':
+                  //       // Only redirect to error screen if it's not an unknown message error
+                  //       if (!isSocketUnknownMessageError(err.error)) {
+                  //         setPath('socket_error');
+                  //       }
+                  //       break;
+                  //     case 'audio_error':
+                  //       setPath('audio_error');
+                  //       break;
+                  //     case 'mic_error':
+                  //       setPath('mic_error');
+                  //       break;
+                  //   }
+                  // }}
+                >
                   <Views />
                 </VoiceProvider>
               </AnimatePresence>
