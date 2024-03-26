@@ -16,7 +16,7 @@ export const Views: FC<ViewsProps> = () => {
   const close = useLayoutStore((store) => store.close);
   const frameSize = useLayoutStore((store) => store.frameSize);
 
-  const { connect, disconnect, status } = useVoice();
+  const { connect, disconnect, status, error } = useVoice();
 
   if (layoutState === LayoutState.CLOSED) {
     return (
@@ -50,7 +50,8 @@ export const Views: FC<ViewsProps> = () => {
         .with('error', () => {
           return (
             <ErrorScreen
-              errorReason={status.reason ?? 'Unknown'}
+              errorType={error?.type ?? ('unknown' as const)}
+              errorReason={error?.message ?? 'Unknown'}
               onConnect={onConnect}
               isConnecting={status.value === 'connecting'}
             />
