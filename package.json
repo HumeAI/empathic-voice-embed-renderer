@@ -22,6 +22,7 @@
     "expression-colors": "github:HumeAI/colors",
     "framer-motion": "^10.18.0",
     "lucide-react": "^0.312.0",
+    "posthog-js": "^1.116.6",
     "react": "^18.2.0",
     "react-aria": "^3.31.1",
     "react-dom": "^18.2.0",

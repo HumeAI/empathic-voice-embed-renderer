@@ -41,6 +41,9 @@ dependencies:
   lucide-react:
     specifier: ^0.312.0
     version: 0.312.0(react@18.2.0)
+  posthog-js:
+    specifier: ^1.116.6
+    version: 1.116.6
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -3905,6 +3908,10 @@ packages:
     dependencies:
       reusify: 1.0.4
 
+  /fflate@0.4.8:
+    resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
+    dev: false
+
   /fflate@0.6.10:
     resolution: {integrity: sha512-IQrh3lEPM93wVCEczc9SaAOvkmcoQn/G8Bo1e8ZPlY3X3bnAxWaBdvTdvM1hP62iZp0BXWDy4vTAy4fF0+Dlpg==}
     dev: false
@@ -4889,8 +4896,19 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.2.0
 
+  /posthog-js@1.116.6:
+    resolution: {integrity: sha512-rvt8HxzJD4c2B/xsUa4jle8ApdqljeBI2Qqjp4XJMohQf18DXRyM6b96H5/UMs8jxYuZG14Er0h/kEIWeU6Fmw==}
+    dependencies:
+      fflate: 0.4.8
+      preact: 10.20.1
+    dev: false
+
   /potpack@1.0.2:
     resolution: {integrity: sha512-choctRBIV9EMT9WGAZHn3V7t0Z2pMQyl0EZE6pFc/6ml3ssw7Dlf/oAOvFwjm1HVsqfQN8GfeFyJ+d8tRzqueQ==}
+    dev: false
+
+  /preact@10.20.1:
+    resolution: {integrity: sha512-JIFjgFg9B2qnOoGiYMVBtrcFxHqn+dNXbq76bVmcaHYJFYR4lW67AOcXgAYQQTDYXDOg/kTZrKPNCdRgJ2UJmw==}
     dev: false
 
   /prelude-ls@1.2.1:
