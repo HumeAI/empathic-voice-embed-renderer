@@ -90,6 +90,20 @@ export default {
       sans: ['var(--font-sans)'],
       mono: ['var(--font-mono)'],
     },
+    keyframes: { 
+        slideLeftAndFade: {
+          from: { opacity: '0', transform: 'translateX(2px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideUpAndFade: {
+          from: { opacity: '0', transform: 'translateY(2px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        slideLeftAndFade: 'slideLeftAndFade 0.4s ease-out',
+        slideUpAndFade: 'slideUpAndFade 0.4s ease-out',
+      },
   },
   plugins: [],
 };
