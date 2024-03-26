@@ -46,12 +46,11 @@ export const Views: FC<ViewsProps> = () => {
         disconnect();
       }}
     >
-      {}
       {match(status.value)
         .with('error', () => {
           return (
             <ErrorScreen
-              errorType={error ? error.type : 'unknown'}
+              errorType={error?.type ?? ('unknown' as const)}
               errorReason={error?.message ?? 'Unknown'}
               onConnect={onConnect}
               isConnecting={status.value === 'connecting'}
