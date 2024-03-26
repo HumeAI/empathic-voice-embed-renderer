@@ -67,7 +67,7 @@ export const ConversationFrame: FC<ConversationFrameProps> = ({
               </Tooltip.Trigger>
               <Tooltip.Content
                 className={
-                  'isolate rounded-md bg-black px-2 py-1 text-xs text-white shadow-sm'
+                  'isolate rounded-md bg-black px-2 py-1 text-xs text-white shadow-sm will-change-[transform,opacity] data-[state=delayed-open]:data-[side=top]:animate-slideUpAndFade'
                 }
                 side={'top'}
                 sideOffset={5}
@@ -84,7 +84,7 @@ export const ConversationFrame: FC<ConversationFrameProps> = ({
                 />
               </Tooltip.Trigger>
               <Tooltip.Content
-                className={'rounded-md bg-black px-2 py-1 text-xs text-white'}
+                className={'rounded-md bg-black px-2 py-1 text-xs text-white will-change-[transform,opacity] data-[state=delayed-open]:data-[side=top]:animate-slideUpAndFade'}
                 side={'top'}
                 sideOffset={5}
               >

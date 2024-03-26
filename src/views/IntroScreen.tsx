@@ -66,7 +66,7 @@ export const IntroScreen = ({
               </Tooltip.Trigger>
               <Tooltip.Content
                 className={
-                  'rounded-md bg-black px-2 py-1 text-xs text-white shadow-sm'
+                  'rounded-md bg-black px-2 py-1 text-xs text-white shadow-sm will-change-[transform,opacity] data-[state=delayed-open]:data-[side=left]:animate-slideLeftAndFade'
                 }
                 side={'left'}
                 sideOffset={5}
