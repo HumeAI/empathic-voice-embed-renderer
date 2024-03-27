@@ -63,7 +63,7 @@ export const IntroScreen = ({
           >
             Start Conversation
           </Button>
-          <div className="absolute right-4 top-4">
+          <div className='absolute right-2 top-3'>
             <Tooltip.Provider delayDuration={400}>
               <Tooltip.Root>
                 <Tooltip.Trigger>
