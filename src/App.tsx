@@ -57,7 +57,7 @@ function App() {
             }}
             onOpen={(dimensions) => {
               setFrameSize(dimensions);
-              open(dimensions);
+              open();
             }}
             onResize={(dimensions) => {
               setFrameSize(dimensions);

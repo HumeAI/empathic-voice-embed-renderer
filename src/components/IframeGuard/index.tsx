@@ -13,6 +13,7 @@ export const IframeGuard: FC<IframeGuardProps> = ({
 }) => {
   const [isIframe, setIsIframe] = useState(false);
   const close = useLayoutStore((store) => store.close);
+
   const hasMounted = useRef(false);
 
   useEffect(() => {
@@ -24,7 +25,6 @@ export const IframeGuard: FC<IframeGuardProps> = ({
   useEffect(() => {
     if (!hasMounted.current) {
       parentDispatch(WIDGET_IFRAME_IS_READY_ACTION);
-      close();
       hasMounted.current = true;
     }
   }, [close]);
