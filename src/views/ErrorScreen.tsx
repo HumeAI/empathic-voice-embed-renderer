@@ -26,8 +26,8 @@ export const ErrorScreen: FC<ErrorScreenProps> = ({
                 Our demo is at capacity right now
               </Balancer>
               <Balancer className="text-center">
-                We're working hard to make sure everyone can chat with our
-                empathic voice AI. Check back soon!
+                Try refreshing the page. We're working hard to make sure
+                everyone can chat with our empathic voice AI.
               </Balancer>
             </>
           );

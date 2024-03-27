@@ -4,6 +4,8 @@ import { expressionColors } from 'expression-colors';
 import { Circle } from 'lucide-react';
 import { FC, useRef } from 'react';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import { cn } from '@/utils';
+import { useDerivedLayoutState } from '@/store/useDerivedLayoutState';
 
 type ProsodyScore = { name: string; score: string };
 
@@ -60,6 +62,8 @@ const EmotionLabel = (prosody: ProsodyScore) => {
 export const LastVoiceMessage: FC<LastVoiceMessageProps> = ({
   lastVoiceMessage,
 }) => {
+  const { isShortFrame } = useDerivedLayoutState();
+
   const prosody = lastVoiceMessage?.models.prosody?.scores ?? {};
   const sortedEmotions: ProsodyScore[] = Object.entries(prosody)
     .sort((a, b) => b[1] - a[1])
@@ -70,7 +74,12 @@ export const LastVoiceMessage: FC<LastVoiceMessageProps> = ({
     });
 
   return (
-    <div className="pointer-events-none absolute top-48 px-6 text-center">
+    <div
+      className={cn(
+        'pointer-events-none absolute px-6 text-center',
+        isShortFrame ? 'top-36' : 'top-48',
+      )}
+    >
       <LayoutGroup>
         {sortedEmotions.map((emotion) => {
           return (
