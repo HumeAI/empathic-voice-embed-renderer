@@ -31,6 +31,8 @@ const DEFAULT_FRAME_HEIGHT = 300;
 export const SHORT_FRAME_HEIGHT = 250;
 const HEIGHT_BREAKPOINT = 750;
 
+const CLOSED_SIZE = 50;
+
 function getFrameSize(dimensions: WindowDimensions) {
   return {
     width:
@@ -51,7 +53,17 @@ export const useLayoutStore = create<LayoutStore>()((set, get) => {
     setFrameSize: (parentDimensions: WindowDimensions) => {
       const frameSize = getFrameSize(parentDimensions);
       set({ frameSize });
-      parentDispatch(RESIZE_FRAME_ACTION(frameSize));
+      const isOpen = get().state === LayoutState.OPEN;
+      if (isOpen) {
+        parentDispatch(RESIZE_FRAME_ACTION(frameSize));
+      } else {
+        parentDispatch(
+          RESIZE_FRAME_ACTION({
+            width: CLOSED_SIZE,
+            height: CLOSED_SIZE,
+          }),
+        );
+      }
     },
     open: () => {
       clearTimeout(timeout);
@@ -65,8 +77,8 @@ export const useLayoutStore = create<LayoutStore>()((set, get) => {
       timeout = window.setTimeout(() => {
         parentDispatch(
           RESIZE_FRAME_ACTION({
-            width: 50,
-            height: 50,
+            width: CLOSED_SIZE,
+            height: CLOSED_SIZE,
           }),
         );
       }, 300);
