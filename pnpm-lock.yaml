@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@humeai/voice':
-    specifier: 0.0.0-beta.13
-    version: 0.0.0-beta.13
+    specifier: 0.0.0-beta.14
+    version: 0.0.0-beta.14
   '@humeai/voice-embed-react':
-    specifier: 0.0.0-beta.13
-    version: 0.0.0-beta.13
+    specifier: 0.0.0-beta.14
+    version: 0.0.0-beta.14
   '@humeai/voice-react':
-    specifier: 0.0.0-beta.13
-    version: 0.0.0-beta.13(@types/react@18.2.70)
+    specifier: 0.0.0-beta.14
+    version: 0.0.0-beta.14(@types/react@18.2.70)
   '@radix-ui/react-tooltip':
     specifier: ^1.0.7
     version: 1.0.7(@types/react-dom@18.2.22)(@types/react@18.2.70)(react-dom@18.2.0)(react@18.2.0)
@@ -702,25 +702,25 @@ packages:
     resolution: {integrity: sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==}
     dev: true
 
-  /@humeai/voice-embed-react@0.0.0-beta.13:
-    resolution: {integrity: sha512-EziamRkvi1liQa2OC9b5JGaPaXjNZ+4UBgwnQxiLgMrZb0NIpNmFOmukkqx7AStKx6B8IUuebCevMk0V0zQLYQ==}
+  /@humeai/voice-embed-react@0.0.0-beta.14:
+    resolution: {integrity: sha512-dg7J6yvIPNbcPYZ03MIK7IjVjsUyy3U25yDIuJFp4rCHJZj2738LKUe1WfzegeNn3skwlxPqR6aCKulk/YaCaA==}
     dependencies:
-      '@humeai/voice-embed': 0.0.0-beta.13
+      '@humeai/voice-embed': 0.0.0-beta.14
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@humeai/voice-embed@0.0.0-beta.13:
-    resolution: {integrity: sha512-UnTSTeUmL5g23py8GxetYCTd0YhBbB5x2VE/y+EPDOl6doSdmxKXE2dx8ZCzI6xREgIE8nEcNtdu/ER0akmAqg==}
+  /@humeai/voice-embed@0.0.0-beta.14:
+    resolution: {integrity: sha512-9hrorkbwfKccY7mnXNTPhiibSDMOAnApP/ev47Aeg4MmqUFnO/d3rvG9meQpGDFzETPo2wd2UpiQY8hSVfTizw==}
     dependencies:
-      '@humeai/voice': 0.0.0-beta.13
+      '@humeai/voice': 0.0.0-beta.14
       zod: 3.22.4
     dev: false
 
-  /@humeai/voice-react@0.0.0-beta.13(@types/react@18.2.70):
-    resolution: {integrity: sha512-zBR7EDj1OhHhL2qK5RO1nVlAzTVzZE82WbwtWvBLnPWrlfshLxCV8RSz3w1dR+3QBk08oDRZX/PquPxJCXbXNw==}
+  /@humeai/voice-react@0.0.0-beta.14(@types/react@18.2.70):
+    resolution: {integrity: sha512-PLuPklxP324so0ZGlCsmMYb2CATCEtvPNwo917hsjnpISKlAmVYWZeG75QKje1i85DuvlZ1YCr+IOHbsl5RvUA==}
     dependencies:
-      '@humeai/voice': 0.0.0-beta.13
+      '@humeai/voice': 0.0.0-beta.14
       '@testing-library/react-hooks': 8.0.1(@types/react@18.2.70)(react-dom@18.2.0)(react@18.2.0)
       meyda: 5.6.2
       react: 18.2.0
@@ -732,8 +732,8 @@ packages:
       - supports-color
     dev: false
 
-  /@humeai/voice@0.0.0-beta.13:
-    resolution: {integrity: sha512-FV7MY+EzOxXwiFAPEQUrJKDA8csH6Tr2FXr4QGC5hXM+8qZy2KWVT7gynL6ol508ycY3apUnSCP3IDr7f5W2hg==}
+  /@humeai/voice@0.0.0-beta.14:
+    resolution: {integrity: sha512-1zXjNUpbJdLwnn6BmmxlcSg8lzVl9G9P2WuYZvVhcq9BF4ENPhZilDJZXl2qOnJtAiJ7g4X5+iZcLseZq9b88A==}
     dependencies:
       reconnecting-websocket: 4.4.0
       ts-pattern: 5.0.8
