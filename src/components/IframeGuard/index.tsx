@@ -25,6 +25,7 @@ export const IframeGuard: FC<IframeGuardProps> = ({
   useEffect(() => {
     if (!hasMounted.current) {
       parentDispatch(WIDGET_IFRAME_IS_READY_ACTION);
+      close();
       hasMounted.current = true;
     }
   }, [close]);
