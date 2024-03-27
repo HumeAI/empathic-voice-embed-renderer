@@ -26,7 +26,7 @@ export const IntroScreen = ({
       transition={{ duration: 2 }}
     >
       <h2 className="text-center text-3xl">
-        Meet EVI, our <CircledText>crusty</CircledText> AI voice
+        Meet EVI, our <CircledText>empathic</CircledText> AI voice
       </h2>
       <div className="w-fit">
         <motion.div
