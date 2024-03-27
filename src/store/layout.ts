@@ -17,7 +17,7 @@ export enum LayoutState {
 interface LayoutStore {
   state: LayoutState;
   frameSize: WindowDimensions;
-  open: (dimensions: WindowDimensions) => void;
+  open: () => void;
   setFrameSize: (dimensions: WindowDimensions) => void;
   close: () => void;
 }
@@ -28,24 +28,29 @@ const DEFAULT_FRAME_WIDTH = 400;
 const DEFAULT_FRAME_HEIGHT = 300;
 const FRAME_MARGIN_X = 48;
 
-export const useLayoutStore = create<LayoutStore>()((set) => {
+function getFrameSize(dimensions: WindowDimensions) {
+  return {
+    width:
+      dimensions.width - FRAME_MARGIN_X < DEFAULT_FRAME_WIDTH
+        ? dimensions.width - FRAME_MARGIN_X
+        : DEFAULT_FRAME_WIDTH,
+    height: DEFAULT_FRAME_HEIGHT,
+  };
+}
+
+export const useLayoutStore = create<LayoutStore>()((set, get) => {
   return {
     state: LayoutState.CLOSED,
     frameSize: { width: DEFAULT_FRAME_WIDTH, height: DEFAULT_FRAME_HEIGHT },
     setFrameSize: (parentDimensions: WindowDimensions) => {
-      const frameSize = {
-        width:
-          parentDimensions.width - FRAME_MARGIN_X < DEFAULT_FRAME_WIDTH
-            ? parentDimensions.width - FRAME_MARGIN_X
-            : DEFAULT_FRAME_WIDTH,
-        height: DEFAULT_FRAME_HEIGHT,
-      };
+      const frameSize = getFrameSize(parentDimensions);
       set({ frameSize });
       parentDispatch(RESIZE_FRAME_ACTION(frameSize));
     },
-    open: (dimensions: WindowDimensions) => {
+    open: () => {
       clearTimeout(timeout);
-      parentDispatch(RESIZE_FRAME_ACTION(dimensions));
+      const frameSize = get().frameSize;
+      parentDispatch(RESIZE_FRAME_ACTION(frameSize));
       parentDispatch(EXPAND_WIDGET_ACTION);
       return set({ state: LayoutState.OPEN });
     },
