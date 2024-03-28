@@ -35,7 +35,7 @@ export const CircledText = (props: { children: React.ReactNode }) => {
         </motion.svg>
       </AnimatePresence>
 
-      {props.children}
+      <span>{props.children}</span>
     </span>
   );
 };
