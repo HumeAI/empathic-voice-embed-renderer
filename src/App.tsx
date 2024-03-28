@@ -76,6 +76,9 @@ function App() {
                   onError={(err) => {
                     posthog.capture('api_error', { error: err });
                   }}
+                  onClose={(e) => {
+                    posthog.capture('socket_closed', { event: e });
+                  }}
                 >
                   <Views />
                 </VoiceProvider>
