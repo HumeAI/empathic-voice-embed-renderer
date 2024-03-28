@@ -39,6 +39,10 @@ function App() {
   const dispatchMessage: ComponentProps<typeof VoiceProvider>['onMessage'] = (
     message,
   ) => {
+    posthog.capture('message_received', {
+      message,
+    });
+
     if (
       message.type === 'user_message' ||
       message.type === 'assistant_message'
@@ -66,7 +70,13 @@ function App() {
           {config ? (
             <Frame>
               <AnimatePresence mode={'wait'}>
-                <VoiceProvider {...config} onMessage={dispatchMessage}>
+                <VoiceProvider
+                  {...config}
+                  onMessage={dispatchMessage}
+                  onError={(err) => {
+                    posthog.capture('api_error', { error: err });
+                  }}
+                >
                   <Views />
                 </VoiceProvider>
               </AnimatePresence>
