@@ -26,7 +26,9 @@ export const IntroScreen = ({
       transition={{ duration: 2 }}
     >
       <h2 className="text-center text-3xl">
-        Meet EVI, our <CircledText>empathic</CircledText> AI voice
+        <span>Meet EVI, our </span>
+        <CircledText>empathic</CircledText>
+        <span> AI voice</span>
       </h2>
       <div className="w-fit">
         <motion.div
@@ -63,7 +65,7 @@ export const IntroScreen = ({
           >
             Start Conversation
           </Button>
-          <div className='absolute right-2 top-3'>
+          <div className="absolute right-2 top-3">
             <Tooltip.Provider delayDuration={400}>
               <Tooltip.Root>
                 <Tooltip.Trigger>
