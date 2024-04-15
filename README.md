@@ -1,30 +1,75 @@
-# React + TypeScript + Vite
+<div align="center">
+  <img src="https://storage.googleapis.com/hume-public-logos/hume/hume-banner.png">
+  <h1>Empathic Voice Interface | Widget</h1>
+  <p>
+    <strong>Jumpstart your development with Hume's Empathic Voice Interface!</strong>
+  </p>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This repository contains the renderer code for the Hume AI website widget, which is powered by EVI. You can it in action at [https://hume.ai](https://hume.ai).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can embed this widget in your own tools as-is, or you can use this repository as a starting point for creating a widget of your own.
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To run this project locally, ensure your development environment meets the following requirements:
 
-- Configure the top-level `parserOptions` property like this:
+- [Node.js](https://nodejs.org/en) (`v18.0.0` or higher)
+- [pnpm](https://pnpm.io/installation) (`v8.0.0` or higher)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+To check the versions of `pnpm` and `Node.js` installed on a Mac via the terminal, you can use the following commands:
+
+1. **For Node.js**, enter the following command and press Enter:
+
+```bash
+node -v
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This command will display the version of Node.js currently installed on your system, for example, `v21.6.1`.
+
+2. **For pnpm**, type the following command and press Enter:
+
+```bash
+pnpm -v
+```
+
+This command will show the version of `pnpm` that is installed, like `8.10.0`.
+
+If you haven't installed these tools yet, running these commands will result in a message indicating that the command was not found. In that case, you would need to install them first. Node.js can be installed from its official website or via a package manager like Homebrew, and `pnpm` can be installed via npm (which comes with Node.js) by running `npm install -g pnpm` in the terminal.
+
+## Serve project
+
+Below are the steps to run the project locally:
+
+1. Run `pnpm i` to install required dependencies.
+2. Run `pnpm build` to build the project.
+3. Run `pnpm dev` to serve the project at `localhost:3000`.
+
+The widget can only be previewed as an iframe, so you will need to set up a separate application.
+
+## Embedding the widget in your own tool
+
+Create a new React project using your favorite dev tool, such as Next.js or Vite.
+
+Install the voice embed package: `pnpm install @humeai/voice-embed-react`
+
+Finally, create a component that contains the embedded voice code. 
+
+```ts
+<EmbeddedVoice
+  auth={{
+    type: 'accessToken',
+    value: accessToken,
+  }}
+  systemPrompt={'your custom system prompt (optional)'}
+  isEmbedOpen={isOpen}
+  openOnMount={false}
+  rendererUrl={'http://localhost:3000'}
+/>
+```
+
+The `rendererUrl` prop should either be `http://localhost:3000` or the url for your deployed widget, if available. If you want to use the default Hume widget that is available on our marketing site, omit this prop entirely.
+
+You will now be able to see the embedded widget in an iframe on your application.
