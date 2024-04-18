@@ -1,12 +1,12 @@
 import {
   parseClientToFrameAction,
-  Config,
+  SocketConfig,
   WindowDimensions,
 } from '@humeai/voice-embed-react';
 import { FC, useEffect, useRef } from 'react';
 
 export type MessageListenerProps = {
-  onUpdateConfig?: (config: Config) => void;
+  onUpdateConfig?: (config: SocketConfig) => void;
   onCancel?: () => void;
   onOpen?: (dimensions: WindowDimensions) => void;
   onResize?: (dimensions: WindowDimensions) => void;

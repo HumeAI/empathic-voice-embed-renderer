@@ -1,10 +1,9 @@
-import { Config } from '@humeai/voice-embed-react';
+import { SocketConfig } from '@humeai/voice-embed-react';
 import { create } from 'zustand';
 
-type config = Config;
 interface ConfigStore {
-  config: config | null;
-  setConfig: (config: config) => void;
+  config: SocketConfig | null;
+  setConfig: (config: SocketConfig) => void;
   clearConfig: () => void;
 }
 
