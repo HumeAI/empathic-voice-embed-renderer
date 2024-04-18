@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useMemo, useRef } from 'react';
 import type {
-  AgentTranscriptMessage,
+  AssistantTranscriptMessage,
   UserTranscriptMessage,
   useVoice,
 } from '@humeai/voice-react';
@@ -25,7 +25,7 @@ export const MessageConsole = ({
     return messages.reduce<
       {
         sender: 'user' | 'assistant';
-        message: UserTranscriptMessage | AgentTranscriptMessage;
+        message: UserTranscriptMessage | AssistantTranscriptMessage;
         sortedEmotions: ProsodyScore[];
       }[]
     >((state, message) => {
