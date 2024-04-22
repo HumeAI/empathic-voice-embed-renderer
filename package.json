@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@humeai/voice-embed-react": "0.0.0-beta.21",
-    "@humeai/voice-react": "0.0.0-beta.21",
+    "@humeai/voice-embed-react": "0.0.0-beta.22",
+    "@humeai/voice-react": "0.0.0-beta.22",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-spring/three": "^9.7.3",
     "@react-three/drei": "^9.99.5",
