@@ -33,7 +33,11 @@ export const MessageConsole = ({
         message.type === 'socket_connected' ||
         message.type === 'socket_disconnected' ||
         message.type === 'user_interruption' ||
-        message.type === 'error'
+        message.type === 'error' ||
+        message.type === 'chat_metadata' ||
+        message.type === 'tool_call' ||
+        message.type === 'tool_response' ||
+        message.type === 'tool_error'
       ) {
         return state;
       }

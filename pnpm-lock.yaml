@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@humeai/voice-embed-react':
-    specifier: 0.0.0-beta.22
-    version: 0.0.0-beta.22
+    specifier: 0.1.4
+    version: 0.1.4
   '@humeai/voice-react':
-    specifier: 0.0.0-beta.22
-    version: 0.0.0-beta.22(@types/react@18.2.79)
+    specifier: 0.1.4
+    version: 0.1.4
   '@radix-ui/react-tooltip':
     specifier: ^1.0.7
     version: 1.0.7(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.3.0)(react@18.3.0)
@@ -699,40 +699,37 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     dev: true
 
-  /@humeai/voice-embed-react@0.0.0-beta.22:
-    resolution: {integrity: sha512-VpLI3DXE+Yi0t0D007A8yWYvpy/GlPXKTbBMFqmt2XTKu/fJaHn/Udcba6Ldymo4EhG45rtZuCysUoZcL2a7Tg==}
+  /@humeai/voice-embed-react@0.1.4:
+    resolution: {integrity: sha512-+TjAMq7K+bpLBInn+k0yVOljcNjuBSy44+i7bZrqPf/6OhOV+5Cp5TgJ/SDZJfP3VLBQooox8hVI+2keFINcyQ==}
     dependencies:
-      '@humeai/voice-embed': 0.0.0-beta.22
+      '@humeai/voice-embed': 0.1.4
       react: 18.3.0
       react-dom: 18.3.0(react@18.3.0)
     dev: false
 
-  /@humeai/voice-embed@0.0.0-beta.22:
-    resolution: {integrity: sha512-+35WvdcPWocqCPrOPmpmF4JmbCkpnRhprUBay5dxMlKPWvXKov+YBAN4cPIuiXil+7TBkrC6ynOzUaMEertoIQ==}
+  /@humeai/voice-embed@0.1.4:
+    resolution: {integrity: sha512-+Ip2ZCkyTH/K6n+nN110mzS5g/5MybE546GtnuhutbIrII+edCQLFKIz9mcCuw8cMzr2wF5tybutnbWGcPIbFg==}
     dependencies:
-      '@humeai/voice': 0.0.0-beta.22
+      '@humeai/voice': 0.1.4
       zod: 3.23.4
     dev: false
 
-  /@humeai/voice-react@0.0.0-beta.22(@types/react@18.2.79):
-    resolution: {integrity: sha512-ZBDGOCXj5TY7UGeLigXdF1LvOBWWxodkrqkS36A5c/TOM0hzfV5qDvSJm3AMnIYZwhOe6Dv0+JEFcyz1DtY4kQ==}
+  /@humeai/voice-react@0.1.4:
+    resolution: {integrity: sha512-Mwjx3efy/bWtsmUHYjCrGNerYc/RzotzAjD6Di1B2WsSuJ3e3ujPIYgaB2rhxc3DzlfamlzHpMJ/fi6lZxje4g==}
     dependencies:
-      '@humeai/voice': 0.0.0-beta.22
-      '@testing-library/react-hooks': 8.0.1(@types/react@18.2.79)(react-dom@18.3.0)(react@18.3.0)
+      '@humeai/voice': 0.1.4
       date-fns: 3.6.0
       meyda: 5.6.3
       react: 18.3.0
       react-dom: 18.3.0(react@18.3.0)
       zod: 3.23.4
     transitivePeerDependencies:
-      - '@types/react'
-      - react-test-renderer
       - rollup
       - supports-color
     dev: false
 
-  /@humeai/voice@0.0.0-beta.22:
-    resolution: {integrity: sha512-/LZixB+mtuoMMGXUfAIbEO6+U1ddE3cmLMglVwUX2InhQl3QwjgZuC+MPrdrfRIr+ZJSiLpGJVZCrXW1zbvCZg==}
+  /@humeai/voice@0.1.4:
+    resolution: {integrity: sha512-ihezjWwD4QJn3N1a5/qaR+oOwPftlDzRCBI4EBZX1dapHZm5cs4c3p+QdTnEyi/IL1RWu6ZNrmpCQAS4JC7+fg==}
     dependencies:
       reconnecting-websocket: 4.4.0
       snakecase-keys: 8.0.0
@@ -2822,29 +2819,6 @@ packages:
       redent: 3.0.0
       vitest: 1.5.2(@types/node@20.12.7)
     dev: true
-
-  /@testing-library/react-hooks@8.0.1(@types/react@18.2.79)(react-dom@18.3.0)(react@18.3.0):
-    resolution: {integrity: sha512-Aqhl2IVmLt8IovEVarNDFuJDVWVvhnr9/GCU6UUnrYXwgDFF9h2L2o2P9KBni1AST5sT6riAyoukFLyjQUgD/g==}
-    engines: {node: '>=12'}
-    peerDependencies:
-      '@types/react': ^16.9.0 || ^17.0.0
-      react: ^16.9.0 || ^17.0.0
-      react-dom: ^16.9.0 || ^17.0.0
-      react-test-renderer: ^16.9.0 || ^17.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react-dom:
-        optional: true
-      react-test-renderer:
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.24.4
-      '@types/react': 18.2.79
-      react: 18.3.0
-      react-dom: 18.3.0(react@18.3.0)
-      react-error-boundary: 3.1.4(react@18.3.0)
-    dev: false
 
   /@testing-library/react@14.3.1(react-dom@18.3.0)(react@18.3.0):
     resolution: {integrity: sha512-H99XjUhWQw0lTgyMN05W3xQG1Nh4lq574D8keFf1dDoNTJgp66VbJozRaczoF+wsiaPJNt/TcnfpLGufGxSrZQ==}
@@ -5236,16 +5210,6 @@ packages:
       loose-envify: 1.4.0
       react: 18.3.0
       scheduler: 0.23.1
-
-  /react-error-boundary@3.1.4(react@18.3.0):
-    resolution: {integrity: sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==}
-    engines: {node: '>=10', npm: '>=6'}
-    peerDependencies:
-      react: '>=16.13.1'
-    dependencies:
-      '@babel/runtime': 7.24.4
-      react: 18.3.0
-    dev: false
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
