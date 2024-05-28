@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@humeai/voice-embed-react':
-    specifier: 0.1.4
-    version: 0.1.4
+    specifier: 0.1.5
+    version: 0.1.5
   '@humeai/voice-react':
-    specifier: 0.1.4
-    version: 0.1.4
+    specifier: 0.1.5
+    version: 0.1.5
   '@radix-ui/react-tooltip':
     specifier: ^1.0.7
     version: 1.0.7(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.3.0)(react@18.3.0)
@@ -699,25 +699,25 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     dev: true
 
-  /@humeai/voice-embed-react@0.1.4:
-    resolution: {integrity: sha512-+TjAMq7K+bpLBInn+k0yVOljcNjuBSy44+i7bZrqPf/6OhOV+5Cp5TgJ/SDZJfP3VLBQooox8hVI+2keFINcyQ==}
+  /@humeai/voice-embed-react@0.1.5:
+    resolution: {integrity: sha512-0hGbVesDIkVNXbVFuMb7UqkzeJ2ULIHTWmJhxzjc02YShsDBpZ+CQdBc6yJRtERkwbmOGiQ7ahKt4o1G7ATCLQ==}
     dependencies:
-      '@humeai/voice-embed': 0.1.4
+      '@humeai/voice-embed': 0.1.5
       react: 18.3.0
       react-dom: 18.3.0(react@18.3.0)
     dev: false
 
-  /@humeai/voice-embed@0.1.4:
-    resolution: {integrity: sha512-+Ip2ZCkyTH/K6n+nN110mzS5g/5MybE546GtnuhutbIrII+edCQLFKIz9mcCuw8cMzr2wF5tybutnbWGcPIbFg==}
+  /@humeai/voice-embed@0.1.5:
+    resolution: {integrity: sha512-7pQIYuFogbWUicnxLE+zWB44icy9yVLHI2iNJGHqlV0HQZhyDSQ/XmSrabU2fx4yPYEgVTG5p7D74f6qMw38eA==}
     dependencies:
-      '@humeai/voice': 0.1.4
+      '@humeai/voice': 0.1.5
       zod: 3.23.4
     dev: false
 
-  /@humeai/voice-react@0.1.4:
-    resolution: {integrity: sha512-Mwjx3efy/bWtsmUHYjCrGNerYc/RzotzAjD6Di1B2WsSuJ3e3ujPIYgaB2rhxc3DzlfamlzHpMJ/fi6lZxje4g==}
+  /@humeai/voice-react@0.1.5:
+    resolution: {integrity: sha512-PqA/RnmfgV8PH8ifbGxhD8TFjU+qFVL0nZR1C+bik0gLyumE0z4S8D4TpaJnks9rYhmTAt3zXj98SfL6dZ/keg==}
     dependencies:
-      '@humeai/voice': 0.1.4
+      '@humeai/voice': 0.1.5
       date-fns: 3.6.0
       meyda: 5.6.3
       react: 18.3.0
@@ -728,8 +728,8 @@ packages:
       - supports-color
     dev: false
 
-  /@humeai/voice@0.1.4:
-    resolution: {integrity: sha512-ihezjWwD4QJn3N1a5/qaR+oOwPftlDzRCBI4EBZX1dapHZm5cs4c3p+QdTnEyi/IL1RWu6ZNrmpCQAS4JC7+fg==}
+  /@humeai/voice@0.1.5:
+    resolution: {integrity: sha512-xtF9ADEcxk2uY6dnJJcx34AmWHYPAOKA0p8AQoKcep/TQASgXu4U3VMWXbHFF6DiB1SapaEXs3CNCHOlW+z/Qg==}
     dependencies:
       reconnecting-websocket: 4.4.0
       snakecase-keys: 8.0.0
