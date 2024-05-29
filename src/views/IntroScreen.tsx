@@ -1,10 +1,10 @@
 import { Button } from '@/components/Button';
 import { CircledText } from '@/components/CircledText';
-import { motion } from 'framer-motion';
-import { Bell } from 'lucide-react';
-import * as Tooltip from '@radix-ui/react-tooltip';
-import { cn } from '@/utils';
 import { useDerivedLayoutState } from '@/store/useDerivedLayoutState';
+import { cn } from '@/utils';
+import * as Tooltip from '@radix-ui/react-tooltip';
+import { motion } from 'framer-motion';
+import { Rocket } from 'lucide-react';
 
 export const IntroScreen = ({
   onConnect,
@@ -71,10 +71,10 @@ export const IntroScreen = ({
                 <Tooltip.Trigger>
                   <div className="grid size-[36px] cursor-pointer place-content-center rounded-full bg-tan-600/20 text-black transition-colors hover:bg-tan-600/50">
                     <a
-                      href="https://share.hsforms.com/15hCR14R4S-e-dlMwN42tkwcjsur"
+                      href="https://beta.hume.ai/playground/voice"
                       target="_blank"
                     >
-                      <Bell className="size-4" />
+                      <Rocket className="size-4" />
                     </a>
                   </div>
                 </Tooltip.Trigger>
@@ -85,7 +85,7 @@ export const IntroScreen = ({
                   side={'left'}
                   sideOffset={5}
                 >
-                  Notify me of public access
+                  Start building
                 </Tooltip.Content>
               </Tooltip.Root>
             </Tooltip.Provider>
