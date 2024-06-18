@@ -37,7 +37,7 @@ export const CloseButton: FC<CloseButtonProps> = ({ onPress }) => {
     <motion.div
       ref={closeButtonRef}
       className={
-        'z-10 grid size-[36px] cursor-pointer place-content-center rounded-full bg-red-500 text-white'
+        'z-10 grid size-[36px] cursor-pointer place-content-center rounded-full bg-red-600 text-white hover:bg-red-500'
       }
       {...mergeProps(closeButtonProps, buttonTransition)}
     >
