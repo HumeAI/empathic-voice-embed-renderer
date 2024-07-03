@@ -31,10 +31,13 @@ export const Views: FC<ViewsProps> = () => {
   }
 
   const onConnect = () => {
-    void connect()
-      .then(() => {})
+    return connect()
+      .then(() => {
+        return { success: true } as const;
+      })
       .catch((e) => {
         console.error(e);
+        return {success: false} as const;
       });
   };
 
@@ -51,7 +54,15 @@ export const Views: FC<ViewsProps> = () => {
             <ErrorScreen
               errorType={error?.type ?? ('unknown' as const)}
               errorReason={error?.message ?? 'Unknown'}
-              onConnect={onConnect}
+              onConnect={() => {
+                onConnect()
+                .then(res => {
+                  if(res.success === false){
+                    // close widget if reconnect fails 
+                    close();
+                  }
+                })
+              }}
               isConnecting={status.value === 'connecting'}
             />
           );
