@@ -7,6 +7,8 @@ type ErrorScreenProps = {
   errorType: 'socket_error' | 'audio_error' | 'mic_error' | 'unknown';
   errorReason: string;
   onConnect: () => void;
+  onClose: () => void;
+  ableToReconnect: boolean;
   isConnecting: boolean;
 };
 
@@ -14,7 +16,9 @@ export const ErrorScreen: FC<ErrorScreenProps> = ({
   errorType,
   errorReason,
   onConnect,
+  onClose,
   isConnecting,
+  ableToReconnect,
 }) => {
   return (
     <div className="mt-12 flex w-full flex-col items-center justify-center gap-2">
@@ -71,13 +75,17 @@ export const ErrorScreen: FC<ErrorScreenProps> = ({
         })}
 
       <div className="pt-2">
-        <Button
-          onClick={onConnect}
-          isLoading={isConnecting}
-          loadingText={'Connecting...'}
-        >
-          Reconnect
-        </Button>
+        {ableToReconnect ? (
+          <Button
+            onClick={onConnect}
+            isLoading={isConnecting}
+            loadingText={'Connecting...'}
+          >
+            Reconnect
+          </Button>
+        ) : (
+          <Button onClick={onClose}>Close</Button>
+        )}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import { ConversationScreen } from '@/views/ConversationScreen';
 import { ErrorScreen } from '@/views/ErrorScreen';
 import { IntroScreen } from '@/views/IntroScreen';
 import { useVoice } from '@humeai/voice-react';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { match } from 'ts-pattern';
 
 export type ViewsProps = Record<never, never>;
@@ -16,6 +16,8 @@ export const Views: FC<ViewsProps> = () => {
   const close = useLayoutStore((store) => store.close);
 
   const { connect, disconnect, status, error } = useVoice();
+
+  const [reconnectError, setReconnectError] = useState<string | null>(null);
 
   if (layoutState === LayoutState.CLOSED) {
     return (
@@ -31,6 +33,7 @@ export const Views: FC<ViewsProps> = () => {
   }
 
   const onConnect = () => {
+    setReconnectError(null);
     return connect()
       .then(() => {
         return { success: true } as const;
@@ -58,12 +61,15 @@ export const Views: FC<ViewsProps> = () => {
                 onConnect()
                 .then(res => {
                   if(res.success === false){
-                    // close widget if reconnect fails 
-                    close();
+                    setReconnectError('Failed to reconnect')
                   }
                 })
               }}
+              onClose={() => {
+                close();
+              }}
               isConnecting={status.value === 'connecting'}
+              ableToReconnect={reconnectError !== null}
             />
           );
         })
